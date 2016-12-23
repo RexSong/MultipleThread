@@ -20,7 +20,20 @@ namespace MultipleTread
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Thread.Sleep(10 * 1000);
+
+            SingleThread();
+
+        }
+
+        //Single Thread
+        private void SingleThread()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                textBox1.Text += string.Format("Launch task {0}", i.ToString());
+                textBox1.Text += "\r\n";
+                Thread.Sleep(1000);
+            }
         }
     }
 }
