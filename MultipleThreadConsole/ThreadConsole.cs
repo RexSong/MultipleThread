@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace MultipleThreadConsole
 {
-    public class ThreadConsole
+    
+    public class ThreadConsole: MultipleThreaded
     {
         public void SyncExecution()
         {
             CostTimeTask();
         }
 
-        public void ExecutionInMultipleThread()
+        public void ExecuteInMultipleThread()
         {
             Thread t = new Thread(CostTimeTask);
             t.Start();
@@ -28,5 +29,7 @@ namespace MultipleThreadConsole
                 Thread.Sleep(5 * 1000);
             }
         }
+
+      
     }
 }

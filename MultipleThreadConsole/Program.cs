@@ -12,6 +12,9 @@ namespace MultipleThreadConsole
         {
             ThreadConsole tc = new ThreadConsole();
             tc.ExecutionInMultipleThread();
+
+            DelegateConsole d = new DelegateConsole();
+            d.ExecutionInMultipleThread();
             Console.Read();
         }
     }

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace MultipleThreadConsole
 {
-    public class ParallelConsole : MultipleThreaded
+    interface MultipleThreaded
     {
-        public void ExecuteInMultipleThread()
-        {
-
-        }
+        void ExecuteInMultipleThread();
     }
 }
