@@ -11,10 +11,14 @@ namespace MultipleThreadConsole
         static void Main(string[] args)
         {
             ThreadConsole tc = new ThreadConsole();
-            tc.ExecutionInMultipleThread();
+            tc.ExecuteInMultipleThread();
 
             DelegateConsole d = new DelegateConsole();
-            d.ExecutionInMultipleThread();
+            d.ExecuteInMultipleThread();
+
+            ParallelConsole p = new ParallelConsole();
+            p.ExecuteInMultipleThread();
+
             Console.Read();
         }
     }

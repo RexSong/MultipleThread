@@ -22,7 +22,6 @@ namespace MultipleThreadConsole
 
         private string ReturnValueTask(string input)
         {
-
             return "Return value is " + input;
         }
 
