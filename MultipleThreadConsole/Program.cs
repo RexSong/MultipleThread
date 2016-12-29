@@ -19,6 +19,12 @@ namespace MultipleThreadConsole
             ParallelConsole p = new ParallelConsole();
             p.ExecuteInMultipleThread();
 
+            ThreadPoolConsole tp = new ThreadPoolConsole();
+            tp.ExecuteInMultipleThread();
+
+            AsyncAwaitConsole aac = new AsyncAwaitConsole();
+            aac.ExecuteInMultipleThread();
+
             Console.Read();
         }
     }

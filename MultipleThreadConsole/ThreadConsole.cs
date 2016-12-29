@@ -17,6 +17,7 @@ namespace MultipleThreadConsole
 
         public void ExecuteInMultipleThread()
         {
+            //ThreadStart is a delegate with no parameter and void return value
             Thread t = new Thread(CostTimeTask);
             t.Start();
         }
