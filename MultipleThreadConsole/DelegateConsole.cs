@@ -13,16 +13,30 @@ namespace MultipleThreadConsole
         public void ExecuteInMultipleThread()
         {
             ReturnTask t = ReturnValueTask;
-            IAsyncResult result = t.BeginInvoke("a", null, null);
+            t.BeginInvoke("a", ExecutionComplete, t);
 
-            var a = t.EndInvoke(result);
-            Console.WriteLine(a);
+            //IAsyncResult ar = t.BeginInvoke("a", null, null);
+            //var result = t.EndInvoke(ar);
+            //Console.WriteLine(result);
+
+            //TO DO other things in main thread
         }
 
 
         private string ReturnValueTask(string input)
         {
             return "Return value is " + input;
+        }
+
+        private void ExecutionComplete(IAsyncResult ar)
+        {
+            if(ar == null) return;
+            var returnTask = ar.AsyncState as ReturnTask;
+            if (returnTask != null)
+            {
+                var result = returnTask.EndInvoke(ar);
+                Console.WriteLine(result);
+            }
         }
 
     }
