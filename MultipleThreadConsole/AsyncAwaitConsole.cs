@@ -12,6 +12,7 @@ namespace MultipleThreadConsole
         public void ExecuteInMultipleThread()
         {
             GetLengthAsync();
+            Console.WriteLine("Function execution complete!");
         }
 
         private async Task<int> GetLengthAsync()
